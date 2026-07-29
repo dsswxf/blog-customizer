@@ -7,10 +7,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js 18
+    - name: Use Node.js 20
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 20
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Yandex-Practicum/tests-blog-customizer.git /tmp/tests-blog-customizer
     - name: Run tests
