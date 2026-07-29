@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { OptionType } from 'src/constants/articleProps';
 import { Text } from 'src/ui/text';
 import { useEnterSubmit } from './hooks/useEnterSubmit';
@@ -17,19 +16,16 @@ type OptionProps = {
 export const Option = (props: OptionProps) => {
 	const { value, title, selected, groupName, onChange, option } = props;
 
-	const optionRef = useRef<HTMLDivElement>(null);
+	const optionRef = useEnterSubmit({ onChange, option });
 
 	const handleChange = () => onChange?.(option);
 
-	useEnterSubmit({ onChange, option });
-
 	const inputId = `${groupName}_radio_item_with_value__${value}`;
-	const isChecked = value === selected.title;
+	const isChecked = value === selected.value;
 
 	return (
 		<div
 			className={styles.item}
-			key={value}
 			data-checked={isChecked}
 			data-testid={inputId}
 			tabIndex={0}
@@ -40,6 +36,7 @@ export const Option = (props: OptionProps) => {
 				name={groupName}
 				id={inputId}
 				value={value}
+				checked={isChecked}
 				onChange={handleChange}
 				tabIndex={-1}
 			/>

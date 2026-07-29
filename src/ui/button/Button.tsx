@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import { Text } from 'src/ui/text';
 
 import styles from './Button.module.scss';
@@ -11,7 +12,7 @@ export const Button = ({
 }: {
 	title: string;
 	onClick?: () => void;
-	htmlType?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+	htmlType?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
 	type: 'apply' | 'clear';
 }) => {
 	return (
