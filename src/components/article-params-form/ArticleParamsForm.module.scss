@@ -1,9 +1,10 @@
 .container {
 	position: fixed;
+	top: 0;
 	left: 0;
 	width: 616px;
 	height: 100%;
-	overflow: scroll;
+	overflow-y: auto;
 	transform: translate(-616px);
 	transition: transform 0.5s ease;
 }
@@ -25,8 +26,11 @@
 	border-right: 1px solid #000000;
 }
 
+.title {
+}
+
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
-	margin-top: auto;
+	margin-top: 175px;
 }
